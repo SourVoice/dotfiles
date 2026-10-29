@@ -49,11 +49,7 @@ vim.api.nvim_exec([[
     endif
 ]], false)
 
--- move cursor faster
-vim.api.nvim_set_keymap('n', 'E', '5j', {noremap = true})
-vim.api.nvim_set_keymap('v', 'E', '5j', {noremap = true})
-vim.api.nvim_set_keymap('n', 'W', '5k', {noremap = true})
-vim.api.nvim_set_keymap('v', 'W', '5k', {noremap = true})
+-- E/W movement mappings are defined in lua/settings.lua.
 
 
 

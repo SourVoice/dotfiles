@@ -66,6 +66,7 @@ echo -e "\033[32mdone\033[0m"
 # files=$(find . -type f -o -type d)
 files=(
 	.vim
+  .config/nvim
 	vscode
 	.bash_profile
 	.bash_prompt
@@ -83,6 +84,8 @@ echo "Create symlinks in the home directory..."
 for file in "${files[@]}"; do
   source_file="$dotfiles_dir/$file"
   dest_file="$HOME/$file"
+
+  mkdir -p "$(dirname "$dest_file")"
 
   echo "Moving any existing dotfiles from ~ to $olddir"
   if [[ -f "$dest_file" || -d "$dest_file" || -L "$dest_file"  ]]; then

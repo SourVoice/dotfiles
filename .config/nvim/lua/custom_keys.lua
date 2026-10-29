@@ -39,6 +39,8 @@ return {
     live_grep           = "<leader>fg",
     search_cursor       = "<leader>fc",
     find_buffer         = "<leader>fb",
+    find_document_symbols = "<leader>fs",
+    find_workspace_symbols = "<leader>fS",
     -- Use the to close telescope window. <C-c> is the default setting, can't edit it here.
     -- close_telescope  = "<C-c>",
 
@@ -49,11 +51,11 @@ return {
     diff_close          = "<leader>dc",
 
     -- View other usage of the plugin: https://github.com/mrjones2014/smart-splits.nvim
-    -- Use the shortcut to resize the window, <control + alt + hjkl>
-    resize_left         = "<leader>h", 
+    -- Match Vim: h widens and l narrows the current split.
+    resize_left         = "<leader>l",
     resize_down         = "<leader>j",
     resize_up           = "<leader>k",
-    resize_right        = "<leader>l",
+    resize_right        = "<leader>h",
 
     -- View other usage of the plugin: https://github.com/neovim/nvim-lspconfig
     -- Goto
@@ -65,5 +67,5 @@ return {
     -- Use the shortcut to rename the code symbols.
     lsp_rename          = "<leader>rn",
     -- Use the shortcut to format your codes.
-    format              = "<leader>f",
+    format              = "<leader>cf",
 }

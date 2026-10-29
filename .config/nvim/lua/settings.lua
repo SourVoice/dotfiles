@@ -9,6 +9,35 @@ map('n', keys.jump_down_window, '<C-W>j', option)
 map('n', keys.jump_up_window, '<C-W>k', option)
 map('n', keys.jump_right_window, '<C-W>l', option)
 
+-- Keep the core movement and window shortcuts aligned with .vimrc.
+map({'n', 'v', 's', 'x', 'o'}, '<C-[>', '<Esc>', option)
+map({'n', 'v', 'o'}, '<C-a>', '<Nop>', option)
+map({'n', 'v', 'o'}, '<C-x>', '<Nop>', option)
+map('n', 'Q', '<Nop>', option)
+map({'n', 'v', 'o'}, '<C-h>', '^', option)
+map({'n', 'v', 'o'}, '<C-l>', '$', option)
+map({'n', 'v', 'o'}, 'E', '5j', option)
+map({'n', 'v', 'o'}, 'W', '5k', option)
+
+map('n', '<leader>u', '<Cmd>aboveleft split<CR>', option)
+map('n', '<leader>o', '<Cmd>belowright split<CR>', option)
+map('n', '<leader>p', '<Cmd>leftabove vsplit<CR>', option)
+map('n', '<leader>i', '<Cmd>rightbelow vsplit<CR>', option)
+
+map('n', 'tu', '<Cmd>tabnew<CR>', option)
+map('n', 'tU', '<Cmd>tab split<CR>', option)
+map('n', 'tn', '<Cmd>tabnext<CR>', option)
+map('n', 'tp', '<Cmd>tabprevious<CR>', option)
+map('n', 'tmn', '<Cmd>+tabmove<CR>', option)
+map('n', 'tmp', '<Cmd>-tabmove<CR>', option)
+map('n', 'tc', '<Cmd>tabclose<CR>', option)
+map('n', '<leader>n', '<Cmd>Neotree position=left source=filesystem action=show toggle=true<CR>', option)
+map('n', '<leader>y', function()
+    local word = vim.fn.expand('<cword>')
+    local result = vim.fn.system({'ici', word})
+    vim.notify('--=' .. word .. '==--\n' .. result)
+end, option)
+
 -- Supported by bufdelete
 -- vim.cmd([[cnoreabbrev q Bdelete]])
 
