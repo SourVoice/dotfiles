@@ -4,7 +4,7 @@
 
 ## 安装
 
-在仓库根目录运行 `bash install.sh`。脚本会把支持的配置链接到 `$HOME`，已有目标会移入 `~/dotfiles_old`。Neovim 配置会链接到 `~/.config/nvim`；Vim、VS Code 和 shell 配置也由脚本处理。
+Linux 在仓库根目录运行 `bash install.sh`；Windows 在 PowerShell 中运行 `Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass`，然后执行 `./install.ps1`。脚本会把支持的配置链接到用户目录，已有目标会移入 `dotfiles_old`。Neovim 配置会链接到 `.config/nvim`；Vim、VS Code 和 shell 配置也由脚本处理。Windows 单文件链接需要启用开发者模式或以管理员身份运行 PowerShell；目录使用 junction。
 
 Neovim 首次启动时会由 lazy.nvim 下载插件。全文检索需要在 `PATH` 中安装 `ripgrep`（提供 `rg`）；符号搜索需要对应的 LSP 服务器已安装并连接到当前项目。`.claude/settings.json` 和 `.bash_prompt` 当前不在安装脚本的链接列表中。
 
@@ -61,6 +61,7 @@ Telescope 窗口默认约占屏幕宽度的 90%、高度的 85%。方向键每�
 - `.gitconfig`：Git 用户名、邮箱和 `lg` 图形化提交历史别名。
 - `.tmux.conf`：tmux 配置，包括 vi 复制模式、分屏/窗口导航与调整、鼠标支持、状态栏、滚动历史，以及 `Ctrl+r` 重载配置。
 - `install.sh`：安装依赖并为 Vim、Neovim、VS Code 和 shell 配置创建符号链接；旧目标会备份到 `~/dotfiles_old`。
+- `install.ps1`：Windows PowerShell 安装脚本，为同一组 Vim、Neovim、VS Code 和 shell 配置创建链接；已存在的目标按原相对路径备份到 `~/dotfiles_old`。
 
 ### Vim
 
